@@ -1,0 +1,89 @@
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="Static/css.css" rel="stylesheet" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+</head>
+<body>
+
+    <div class="detail_pg">
+        <div class="shortcut">
+            <img src="./Static/logoClient.png" alt="" class="shortcut_logo" />
+            <section class="wbw">
+                <h3 class="shortcut_tt">熟客温州斗牛</h3>
+                <div>版本：1.0.0<span class="ml20">大小：4.4MB</span></div>
+                <div>2017-03-01</div>
+            </section>
+            <div class="shortcut_tool">
+                <i class="shortcut_open" onclick="browserRedirect();"></i>
+            </div>
+        </div>
+        <!--  -->
+        <div class="detailpic_wrap">
+            <ul class="detailpic" id="sildex">
+                <li><img src="./Static/01.png" alt="" /></li>
+                <li><img src="./Static/02.png" alt="" /></li>
+                <li><img src="./Static/03.png" alt="" /></li>
+            </ul>
+        </div>
+        <div class="detailpic_wrap">
+            <strong>说明:</strong><br>
+            1. 如果不能自动下载，请点击右上角[打开]按钮，系统自动根据您的手机设备下载Android/Ios安装包。<br>
+            2. 点击[打开]按钮后，会提示您是否安装千翻万州麻将手机端，选[是]自动安装，并按手机[Home]返回键，到桌面查看安装进度。
+        </div>
+    </div>
+    <!--end 中间-->
+    <div id="wxDiv">
+        <div class="wenziwx">
+            <span>1.请点击右上角  ··· </span>
+            <span> 2.选择  在浏览器中打开</span>
+        </div>
+    </div>
+    <!-- end 底部 -->
+    <script src="Static/slip-min.js"></script>
+    <script>
+    document.body.addEventListener("touchstart", function () { });
+    </script>
+    <!-- slip -->
+    <script>
+    if (typeof slip != "undefined") {
+        var ele = document.getElementById("sildex");
+        if (ele != null) { var slipNav = slip('px', ele, { direction: "x", no_bar: true }); };
+    };
+    </script>
+    <!-- end slip -->
+   
+    <script>
+
+    function browserRedirect() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+        if (sUserAgent.match(/MicroMessenger/i) == "micromessenger") {
+            document.getElementById("wxDiv").style.display = "block";
+        }
+        if (sUserAgent.match(/QQ/i) == "qq") {
+            document.getElementById("wxDiv").style.display = "block";
+        }
+        if (bIsIphoneOs || bIsIpad) {
+          window.location.href = "";
+        }
+        else {
+        window.location.href = "./skwzdn.apk";
+        }
+    }
+    <!--browserRedirect();-->
+    </script>
+</body>
+</html>
